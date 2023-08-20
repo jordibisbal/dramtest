@@ -1,0 +1,1 @@
+ -c -mcpu=$(MP_PROCESSOR_OPTION)      -g -D__DEBUG     -omf=elf -DXPRJ_37Config_4=$(CND_CONF)    $(COMPARISON_BUILD)  -msmall-code -msmall-data -O1 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"C:\Users\jordi\OneDrive\Documents\Projects\AMJoy\AMJoy.X\main.c
