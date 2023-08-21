@@ -1,13 +1,7 @@
     .include "p24Fxxxx.inc"
     
 # Data
-    
-    .data      
-    
-    .bss
-    buffer: .space 16 * 2
-    
-    .global buffer
+    .data              
     
 # Code  
     
@@ -15,8 +9,11 @@
     .global _mains    
     
 _mains: 
-    inc w0, w0
+    call mk41xxPrepareForWrite
+    clr w0
+loop:        
     call mk41xxWrite0
+    inc w0, w0
     
-    bra _mains
+    bra loop
     

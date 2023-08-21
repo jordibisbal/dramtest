@@ -203,42 +203,42 @@ endif
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: assemble
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/mcc_generated_files/memory/flash.o: mcc_generated_files/memory/flash.s  .generated_files/flags/Optimized_small_small/67dfd2440e8bdee54018da3d0217c75c2a9a1039 .generated_files/flags/Optimized_small_small/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/mcc_generated_files/memory/flash.o: mcc_generated_files/memory/flash.s  .generated_files/flags/Optimized_small_small/deab942ad620e4910416792dac53d788d5caf4a3 .generated_files/flags/Optimized_small_small/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}/mcc_generated_files/memory" 
 	@${RM} ${OBJECTDIR}/mcc_generated_files/memory/flash.o.d 
 	@${RM} ${OBJECTDIR}/mcc_generated_files/memory/flash.o 
-	${MP_CC} $(MP_EXTRA_AS_PRE)  mcc_generated_files/memory/flash.s  -o ${OBJECTDIR}/mcc_generated_files/memory/flash.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -D__DEBUG   -omf=elf -DXPRJ_Optimized_small_small=$(CND_CONF)    -Wa,-MD,"${OBJECTDIR}/mcc_generated_files/memory/flash.o.d",--defsym=__MPLAB_BUILD=1,--defsym=__ICD2RAM=1,--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1,,-g,--no-relax,-al=${OBJECTDIR}/mcc_generated_files/memory/flash.lst$(MP_EXTRA_AS_POST)  -mdfp="${DFP_DIR}/xc16"
+	${MP_CC} $(MP_EXTRA_AS_PRE)  mcc_generated_files/memory/flash.s  -o ${OBJECTDIR}/mcc_generated_files/memory/flash.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -D__DEBUG   -omf=elf -DXPRJ_Optimized_small_small=$(CND_CONF)    -Wa,-MD,"${OBJECTDIR}/mcc_generated_files/memory/flash.o.d",--defsym=__MPLAB_BUILD=1,--defsym=__ICD2RAM=1,--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1,,-g,--no-relax,-ahml=${OBJECTDIR}/mcc_generated_files/memory/flash.lst$(MP_EXTRA_AS_POST)  -mdfp="${DFP_DIR}/xc16"
 	
-${OBJECTDIR}/src/drivers/mk41xx.o: src/drivers/mk41xx.s  .generated_files/flags/Optimized_small_small/c9a3a806b151be6ffac21002d38f0dbbc08f90e2 .generated_files/flags/Optimized_small_small/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/src/drivers/mk41xx.o: src/drivers/mk41xx.s  .generated_files/flags/Optimized_small_small/8c986d5882878d594b6dcf61eb19dd0149805483 .generated_files/flags/Optimized_small_small/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}/src/drivers" 
 	@${RM} ${OBJECTDIR}/src/drivers/mk41xx.o.d 
 	@${RM} ${OBJECTDIR}/src/drivers/mk41xx.o 
-	${MP_CC} $(MP_EXTRA_AS_PRE)  src/drivers/mk41xx.s  -o ${OBJECTDIR}/src/drivers/mk41xx.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -D__DEBUG   -omf=elf -DXPRJ_Optimized_small_small=$(CND_CONF)    -Wa,-MD,"${OBJECTDIR}/src/drivers/mk41xx.o.d",--defsym=__MPLAB_BUILD=1,--defsym=__ICD2RAM=1,--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1,,-g,--no-relax,-al=${OBJECTDIR}/src/drivers/mk41xx.lst$(MP_EXTRA_AS_POST)  -mdfp="${DFP_DIR}/xc16"
+	${MP_CC} $(MP_EXTRA_AS_PRE)  src/drivers/mk41xx.s  -o ${OBJECTDIR}/src/drivers/mk41xx.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -D__DEBUG   -omf=elf -DXPRJ_Optimized_small_small=$(CND_CONF)    -Wa,-MD,"${OBJECTDIR}/src/drivers/mk41xx.o.d",--defsym=__MPLAB_BUILD=1,--defsym=__ICD2RAM=1,--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1,,-g,--no-relax,-ahml=${OBJECTDIR}/src/drivers/mk41xx.lst$(MP_EXTRA_AS_POST)  -mdfp="${DFP_DIR}/xc16"
 	
-${OBJECTDIR}/src/mains.o: src/mains.s  .generated_files/flags/Optimized_small_small/d0e21612fff091604465706499c8b30e8ca2b536 .generated_files/flags/Optimized_small_small/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/src/mains.o: src/mains.s  .generated_files/flags/Optimized_small_small/beb5b15033c4b5c27753e69c17006db8e7ca7530 .generated_files/flags/Optimized_small_small/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}/src" 
 	@${RM} ${OBJECTDIR}/src/mains.o.d 
 	@${RM} ${OBJECTDIR}/src/mains.o 
-	${MP_CC} $(MP_EXTRA_AS_PRE)  src/mains.s  -o ${OBJECTDIR}/src/mains.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -D__DEBUG   -omf=elf -DXPRJ_Optimized_small_small=$(CND_CONF)    -Wa,-MD,"${OBJECTDIR}/src/mains.o.d",--defsym=__MPLAB_BUILD=1,--defsym=__ICD2RAM=1,--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1,,-g,--no-relax,-al=${OBJECTDIR}/src/mains.lst$(MP_EXTRA_AS_POST)  -mdfp="${DFP_DIR}/xc16"
+	${MP_CC} $(MP_EXTRA_AS_PRE)  src/mains.s  -o ${OBJECTDIR}/src/mains.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -D__DEBUG   -omf=elf -DXPRJ_Optimized_small_small=$(CND_CONF)    -Wa,-MD,"${OBJECTDIR}/src/mains.o.d",--defsym=__MPLAB_BUILD=1,--defsym=__ICD2RAM=1,--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1,,-g,--no-relax,-ahml=${OBJECTDIR}/src/mains.lst$(MP_EXTRA_AS_POST)  -mdfp="${DFP_DIR}/xc16"
 	
 else
-${OBJECTDIR}/mcc_generated_files/memory/flash.o: mcc_generated_files/memory/flash.s  .generated_files/flags/Optimized_small_small/9a61380bc8d4c4eb70100f3975571fde3c8bf35e .generated_files/flags/Optimized_small_small/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/mcc_generated_files/memory/flash.o: mcc_generated_files/memory/flash.s  .generated_files/flags/Optimized_small_small/e06f7e811d5ca935ee785dd8de336585fa8a649e .generated_files/flags/Optimized_small_small/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}/mcc_generated_files/memory" 
 	@${RM} ${OBJECTDIR}/mcc_generated_files/memory/flash.o.d 
 	@${RM} ${OBJECTDIR}/mcc_generated_files/memory/flash.o 
-	${MP_CC} $(MP_EXTRA_AS_PRE)  mcc_generated_files/memory/flash.s  -o ${OBJECTDIR}/mcc_generated_files/memory/flash.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -omf=elf -DXPRJ_Optimized_small_small=$(CND_CONF)    -Wa,-MD,"${OBJECTDIR}/mcc_generated_files/memory/flash.o.d",--defsym=__MPLAB_BUILD=1,-g,--no-relax,-al=${OBJECTDIR}/mcc_generated_files/memory/flash.lst$(MP_EXTRA_AS_POST)  -mdfp="${DFP_DIR}/xc16"
+	${MP_CC} $(MP_EXTRA_AS_PRE)  mcc_generated_files/memory/flash.s  -o ${OBJECTDIR}/mcc_generated_files/memory/flash.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -omf=elf -DXPRJ_Optimized_small_small=$(CND_CONF)    -Wa,-MD,"${OBJECTDIR}/mcc_generated_files/memory/flash.o.d",--defsym=__MPLAB_BUILD=1,-g,--no-relax,-ahml=${OBJECTDIR}/mcc_generated_files/memory/flash.lst$(MP_EXTRA_AS_POST)  -mdfp="${DFP_DIR}/xc16"
 	
-${OBJECTDIR}/src/drivers/mk41xx.o: src/drivers/mk41xx.s  .generated_files/flags/Optimized_small_small/66c2ef2cb9b49f2ef37a90411413eebaab41e6bb .generated_files/flags/Optimized_small_small/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/src/drivers/mk41xx.o: src/drivers/mk41xx.s  .generated_files/flags/Optimized_small_small/57af8fb2e261e5661f9d31480eb25f6ee8bc5d21 .generated_files/flags/Optimized_small_small/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}/src/drivers" 
 	@${RM} ${OBJECTDIR}/src/drivers/mk41xx.o.d 
 	@${RM} ${OBJECTDIR}/src/drivers/mk41xx.o 
-	${MP_CC} $(MP_EXTRA_AS_PRE)  src/drivers/mk41xx.s  -o ${OBJECTDIR}/src/drivers/mk41xx.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -omf=elf -DXPRJ_Optimized_small_small=$(CND_CONF)    -Wa,-MD,"${OBJECTDIR}/src/drivers/mk41xx.o.d",--defsym=__MPLAB_BUILD=1,-g,--no-relax,-al=${OBJECTDIR}/src/drivers/mk41xx.lst$(MP_EXTRA_AS_POST)  -mdfp="${DFP_DIR}/xc16"
+	${MP_CC} $(MP_EXTRA_AS_PRE)  src/drivers/mk41xx.s  -o ${OBJECTDIR}/src/drivers/mk41xx.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -omf=elf -DXPRJ_Optimized_small_small=$(CND_CONF)    -Wa,-MD,"${OBJECTDIR}/src/drivers/mk41xx.o.d",--defsym=__MPLAB_BUILD=1,-g,--no-relax,-ahml=${OBJECTDIR}/src/drivers/mk41xx.lst$(MP_EXTRA_AS_POST)  -mdfp="${DFP_DIR}/xc16"
 	
-${OBJECTDIR}/src/mains.o: src/mains.s  .generated_files/flags/Optimized_small_small/483e5c371321ca4494fc819776270023bb456ef9 .generated_files/flags/Optimized_small_small/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/src/mains.o: src/mains.s  .generated_files/flags/Optimized_small_small/b2b795a04e4e581798f0d49c2ef46821a2e93bcc .generated_files/flags/Optimized_small_small/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}/src" 
 	@${RM} ${OBJECTDIR}/src/mains.o.d 
 	@${RM} ${OBJECTDIR}/src/mains.o 
-	${MP_CC} $(MP_EXTRA_AS_PRE)  src/mains.s  -o ${OBJECTDIR}/src/mains.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -omf=elf -DXPRJ_Optimized_small_small=$(CND_CONF)    -Wa,-MD,"${OBJECTDIR}/src/mains.o.d",--defsym=__MPLAB_BUILD=1,-g,--no-relax,-al=${OBJECTDIR}/src/mains.lst$(MP_EXTRA_AS_POST)  -mdfp="${DFP_DIR}/xc16"
+	${MP_CC} $(MP_EXTRA_AS_PRE)  src/mains.s  -o ${OBJECTDIR}/src/mains.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -omf=elf -DXPRJ_Optimized_small_small=$(CND_CONF)    -Wa,-MD,"${OBJECTDIR}/src/mains.o.d",--defsym=__MPLAB_BUILD=1,-g,--no-relax,-ahml=${OBJECTDIR}/src/mains.lst$(MP_EXTRA_AS_POST)  -mdfp="${DFP_DIR}/xc16"
 	
 endif
 

@@ -1,30 +1,81 @@
     .include "p24Fxxxx.inc"
     
-# Constants    
+; Constants    
     
-    .equ NCas,   0x4000
-    .equ NRas,   0x2000    
-    .equ NWrite, 0x1000    
+    .equiv init,  0
     
-    .equ NRasBit,   14
-    .equ NCasBit,   13
-    .equ NWriteBit, 12    
+    .equiv NRasBit,   14
+    .equiv NCasBit,   13
+    .equiv NWriteBit, 12  
+    .equiv dataInBit, 15
+    .equiv dataOutBit, 11    
+
+    .equiv NCas,   1 << NRasBit
+    .equiv NRas,   1 << NCasBit
+    .equiv NWrite, 1 << NWriteBit
+    .equiv dataOut, 1 << dataOutBit
     
-    .equ dataIn, 15
-    .equ dataOut, 11
+    .equiv dis4ew0, NCas | NRas | ramLatchInit
+    .equiv dis4ew1, NCas | NRas | dataOut | ramLatchInit    
     
-    .equ ramLatch, LATB        
-# Data
+    .equiv ramLatch,     LATB        
+    .equiv ramLatchInit, 0
+;; Data
     
     .data      
     .bss
     
-# Code  
+    .equiv wewLen,     5
+    
+    wewPad0: .space wewLen * 2
+    wewPad1: .space wewLen * 2
+    
+; Code  
     
     .text
     .global mk41xxWrite0    
+    .global mk41xxPrepareForWrite
     
-      
+mk41xxPrepareForWrite:
+    
+    ; Initialize for 0
+    
+    mov  #wewPad0, w2
+   
+    mov  #dis4ew0, w1   ; Init for early write with row address (0)
+    mov  w1, [w2]       
+    
+    bclr w1, #NRasBit	; NRas -> 0
+    mov  w1, [w2 + #2]	;  
+    
+    mov  w1, [w2 + #4]	; Column Address (0) + Data (0)
+    
+    bclr w1, #NCasBit	; NCas -> 0
+    mov  w1, [w2 + #6]	; 
+                               
+    mov  #dis4ew0, w1	; All signals -> 1
+    mov  w1, [w2 + #8]
+    
+    ; Initialize for 1
+    
+    mov #wewPad1, w2
+   
+    mov  #dis4ew1, w1     ; Init for early write with row address (0)
+    mov  w1, [w2 + #0]       
+    
+    bclr w1, #NRasBit	; NRas -> 0
+    mov  w1, [w2 + #2]	;  
+    
+    mov w1, [w2 + #4]	; Column Address (0) + Data (0)
+    
+    bclr w1, #NCasBit	; NCas -> 0
+    mov  w1, [w2 + #6]	; 
+                               
+    mov  #dis4ew1, w1	; All signals -> 1
+    mov  w1, [w2 + #8]
+    
+    return
+        
 mk41xxWrite0:   
     ;
     ; Writes a 0
@@ -32,57 +83,34 @@ mk41xxWrite0:
     ; Input 
     ;	    w0: address (row:7:0::column:7:0)
     ; Modifies
-    ;       w1, flags
+    ;       w1, w2, flags
     
-    ; Populates the stack with the stages in REVERSE ORDER (6 levels)
-    .equ stages, 0
-    mov ramLatch, w1
+    ; Set address and data on wewPad0
+    mov    #wewPad0, w2
+       
+    mov.B  w0, [w2 + #0]            ; set row address
+    mov.B  w0, [w2 + #2]
+      
+    swap.W w0
     
-    mov #(NCas | NRas | NWrite), w1 ; All signals -> 1
-    .equ stages, stages + 1
-    push w1    
+    mov.B  w0, [w2 + #4]
+    mov.B  w0, [w2 + #6]
     
-    clr   w1                        ; All signals -> 0
-    swap.W w0                       ; Set address (column)
-    mov.b w0, w1                    ; 
-    .equ stages, stages + 1
-    push  w1
+    swap.W w0
     
-    bset w1, #NCasBit		    ; CAS 1 -> 0
-    .equ stages, stages + 1
-    push w1
+    ; Send pad
     
-    swap.W w0                       ; Set address (row)
-    mov.b w0, w1                    ;
+    disi #wewLen + 2
     
-    .equ stages, stages + 1
-    push w1                         
+    mov #ramLatch, w1
     
-    bset w1, #NWriteBit             ; Write 1 -> 0
-    .equ stages, stages + 1
-    push w1
-    
-    bset w1, #NRasBit               ; RAS 1 -> 0
-    .equ stages, stages + 1
-    push w1   
-    
-    ; Disable interrupts
-    
-    disi #(stages + 1)
-    
-    ; Send the stages    
-    
-    repeat #(stages - 1)
-    pop ramLatch ; set Data
-		 ; signal NRAS
-		 ; signal NWRITE
-		 ; set Column
-		 ; signal NCAS
-		 ; signal end
-		 
-    ; Enable interrupts
-    
-    disi #0	
+    mov [w2++], [w1] ; Dis + Row
+    mov [w2++], [w1] ; RAS
+    mov [w2++], [w1] ; Column
+    mov [w2++], [w1] ; Cas
+    mov [w2++], [w1] ; Dis
+	
+    disi #0
      
-    return
+    return    
     

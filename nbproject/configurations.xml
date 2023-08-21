@@ -157,9 +157,9 @@
         <property key="false-conditionals" value="false"/>
         <property key="keep-locals" value="false"/>
         <property key="list-assembly" value="true"/>
-        <property key="list-section-info" value="false"/>
-        <property key="list-source" value="false"/>
-        <property key="list-symbols" value="false"/>
+        <property key="list-section-info" value="true"/>
+        <property key="list-source" value="true"/>
+        <property key="list-symbols" value="true"/>
         <property key="oXC16asm-extra-opts" value=""/>
         <property key="oXC16asm-list-to-file" value="true"/>
         <property key="omit-debug-dirs" value="false"/>
@@ -505,14 +505,14 @@
       </C30-AR>
       <C30-AS>
         <property key="assembler-symbols" value=""/>
-        <property key="expand-macros" value="false"/>
+        <property key="expand-macros" value="true"/>
         <property key="extra-include-directories-for-assembler" value=""/>
         <property key="extra-include-directories-for-preprocessor" value=""/>
         <property key="false-conditionals" value="false"/>
         <property key="keep-locals" value="false"/>
         <property key="list-assembly" value="true"/>
         <property key="list-section-info" value="false"/>
-        <property key="list-source" value="false"/>
+        <property key="list-source" value="true"/>
         <property key="list-symbols" value="false"/>
         <property key="oXC16asm-extra-opts" value=""/>
         <property key="oXC16asm-list-to-file" value="true"/>
@@ -629,7 +629,7 @@
         <property key="debugoptions.debug-startup" value="Use system settings"/>
         <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.simultaneous.debug" value="false"/>
-        <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="debugoptions.useswbreakpoints" value="true"/>
         <property key="event.recorder.enabled" value="false"/>
         <property key="event.recorder.scvd.files" value=""/>
         <property key="freeze.timers" value="false"/>
@@ -721,7 +721,7 @@
         <property key="debugoptions.debug-startup" value="Use system settings"/>
         <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.simultaneous.debug" value="false"/>
-        <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="debugoptions.useswbreakpoints" value="true"/>
         <property key="event.recorder.enabled" value="false"/>
         <property key="event.recorder.scvd.files" value=""/>
         <property key="freeze.timers" value="false"/>

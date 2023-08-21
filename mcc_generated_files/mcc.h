@@ -51,9 +51,9 @@
 #include <stdint.h>
 #include <stdbool.h>
 
+#include "memory/flash.h"
 #include "interrupt_manager.h"
 #include "traps.h"
-#include "memory/flash.h"
 #include "tmr1.h"
 
 #warning "This file will be removed in future MCC releases. Use system.h instead."
